@@ -8,6 +8,8 @@ const Manager = require('./lib/Manager');
 
 const team =[];
 
+const createHTML = require('./src/createHTML');
+
 const initTeam = function() {
     inquirer.prompt([
             {
@@ -221,6 +223,15 @@ const addIntern = function() {
         });
 };
 
-
+const completeTeam = function() {
+    const genPage = createHTML(team);
+    
+    fs.writeFile('./dist/index.html', genPage, err => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+    })
+}
 
 initTeam();
