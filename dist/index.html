@@ -1,5 +1,4 @@
-const createHTML = function(team) {
-    return `
+
     <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,72 +17,55 @@ const createHTML = function(team) {
             <h1>My Team</h1>
         </header>
                 <div class="container d-inline-flex" style="padding: 30px; justify-content: center;">
-                    ${createCards(team)}
+                    
+    
+                <div class="card" style="margin: 3%; max-width: fit-content;">
+                    <div class="card-header" style="background-color: #0077f7;">
+                        <h2 style="color:white">MGR1</h2>
+                        <h3 style="color:white">Manager</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: 1</li>
+                            <li class="list-group-item">Email: <a href="mailto:mgr@emial.com">mgr@emial.com</a> </li>
+                            <li class="list-group-item">Office Number: 123</li>
+                        </ul>
+                    </div>
+                </div>
+            
+
+    
+                <div class="card" style="margin: 3%; max-width: fit-content;">
+                    <div class="card-header" style="background-color: #0077f7;">
+                        <h2 style="color:white">EGR!</h2>
+                        <h3 style="color:white">Manager</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: 2</li>
+                            <li class="list-group-item">Email: <a href="mailto:egr@email.com">egr@email.com</a> </li>
+                            <li class="list-group-item">GitHub: <a href="https://github.com/gitEE">gitEE</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+
+    
+                <div class="card" style="margin: 3%; max-width: fit-content;">
+                    <div class="card-header" style="background-color: #0077f7;">
+                        <h2 style="color:white">INT!</h2>
+                        <h3 style="color:white">Manager</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: 3</li>
+                            <li class="list-group-item">Email: <a href="mailto:int@email.com">int@email.com</a> </li>
+                            <li class="list-group-item">Attending: SFA</li>
+                        </ul>
+                    </div>
+                </div>
+            
+    
                 </div>
     </body>
 </html>
-`
-}
-
-const createCards = function(team) {
-    return `
-    ${team.filter(employee => employee.getRole() === 'Manager').map(({name, id, email, officeNumber}) => {
-        return `
-                <div class="card" style="margin: 3%; max-width: fit-content;">
-                    <div class="card-header" style="background-color: #0077f7;">
-                        <h2 style="color:white">${name}</h2>
-                        <h3 style="color:white">Manager</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email: <a href="mailto:${email}">${email}</a> </li>
-                            <li class="list-group-item">Office Number: ${officeNumber}</li>
-                        </ul>
-                    </div>
-                </div>
-            `
-        }).join('')
-    }
-
-    ${team.filter(employee => employee.getRole() === 'Engineer').map(({name, id, email, github}) => {
-        return `
-                <div class="card" style="margin: 3%; max-width: fit-content;">
-                    <div class="card-header" style="background-color: #0077f7;">
-                        <h2 style="color:white">${name}</h2>
-                        <h3 style="color:white">Manager</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email: <a href="mailto:${email}">${email}</a> </li>
-                            <li class="list-group-item">GitHub: <a href="https://github.com/${github}">${github}</a></li>
-                        </ul>
-                    </div>
-                </div>
-            `
-        }).join('')
-    }
-
-    ${team.filter(employee => employee.getRole() === 'Intern').map(({name, id, email, school}) => {
-        return `
-                <div class="card" style="margin: 3%; max-width: fit-content;">
-                    <div class="card-header" style="background-color: #0077f7;">
-                        <h2 style="color:white">${name}</h2>
-                        <h3 style="color:white">Manager</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email: <a href="mailto:${email}">${email}</a> </li>
-                            <li class="list-group-item">Attending: ${school}</li>
-                        </ul>
-                    </div>
-                </div>
-            `
-        }).join('')
-    }
-    `;
-}
-
-module.exports = createHTML;
