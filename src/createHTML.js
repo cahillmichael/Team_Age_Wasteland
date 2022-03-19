@@ -1,3 +1,4 @@
+//creates head, header, and body
 const createHTML = function(team) {
     return `
     <!DOCTYPE html>
@@ -25,6 +26,7 @@ const createHTML = function(team) {
 `
 }
 
+//filters team array by role and creates cards capturing unique aspects of each role
 const createCards = function(team) {
     return `
     ${team.filter(employee => employee.getRole() === 'Manager').map(({name, id, email, officeNumber}) => {

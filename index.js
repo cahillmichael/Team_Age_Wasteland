@@ -10,6 +10,7 @@ const team =[];
 
 const createHTML = require('./src/createHTML');
 
+//function to gather information on team manager
 const initTeam = function() {
     inquirer.prompt([
             {
@@ -65,7 +66,7 @@ const initTeam = function() {
                 }
             }
         ])
-
+        //write information to team array and call menu function
         .then(({name, id, email, officeNumber}) => {
             const manager = new Manager(name, id, email, officeNumber);
             team.push(manager);
@@ -74,6 +75,7 @@ const initTeam = function() {
         });
 };
 
+//menu function handles user choices, calling addEnginer, addIntern, or completeTeam to generate html
 const menu = function() {
     inquirer.prompt({
             type: 'list',
@@ -91,10 +93,9 @@ const menu = function() {
 		        completeTeam();
             }
         })
-
-        console.log(team);
 };
 
+//gathers engineer information and writes to team array, then call menu
 const addEngineer = function() {
     inquirer.prompt([
             {
@@ -159,6 +160,7 @@ const addEngineer = function() {
         });
 };
 
+//gather intern information and write to team array, then call menu
 const addIntern = function() {
     inquirer.prompt([
             {
@@ -223,6 +225,7 @@ const addIntern = function() {
         });
 };
 
+//calls createHTML and writes html file to the dist directory
 const completeTeam = function() {
     const genPage = createHTML(team);
     

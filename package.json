@@ -1,0 +1,25 @@
+{
+  "name": "team_age_wasteland",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cahillmichael/Team_Age_Wasteland.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cahillmichael/Team_Age_Wasteland/issues"
+  },
+  "homepage": "https://github.com/cahillmichael/Team_Age_Wasteland#readme",
+  "dependencies":{
+    "inquirer": "^8.2.1"
+  }
+}
