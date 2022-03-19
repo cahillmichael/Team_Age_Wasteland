@@ -87,7 +87,9 @@ const menu = function() {
                 addIntern();
             } else {
 		        completeTeam();
-        });
+            }
+        })
+
         console.log(team);
 };
 
@@ -155,24 +157,6 @@ const addEngineer = function() {
         });
 };
 
-const menu = function() {
-    inquirer.prompt({
-            type: 'list',
-            name: 'menuChoice',
-            message: 'Select an option:',
-            choices: ['Add an engineer.', 'Add an intern.', 'Complete team.']
-        })
-
-        .then(response => {
-            if (response.menuChoice === 'Add an engineer.') {
-                addEngineer();
-            } else if (response.menuChoice === 'Add an intern.') {
-                addIntern();
-            } else {
-		        completeTeam();
-        });
-};
-
 const addIntern = function() {
     inquirer.prompt([
             {
@@ -237,3 +221,6 @@ const addIntern = function() {
         });
 };
 
+
+
+initTeam();
